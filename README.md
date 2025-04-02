@@ -70,7 +70,7 @@ Todo-App is a lightweight, frontend-only Todo application built with React and V
 
    The app will be available at http://localhost:3000 or on the port specified by Vite.
 
-   [![Image](https://i.hizliresim.com/5l7exwa.PNG)](https://hizliresim.com/5l7exwa)
+   ![Image](https://imgur.com/cP0Fi4S)
 
 ---
 
