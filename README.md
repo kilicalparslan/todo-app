@@ -90,3 +90,13 @@ Todo-App is a lightweight, frontend-only Todo application built with React and V
 
 - **Deleting a Task:**
   - Remove a task by clicking on the trash icon.
+
+---
+
+## UPDATED!
+
+**- Task list can now be sorted using drag and drop.**
+
+**- The project can be accessed live at the address below.**
+
+https://todo-app-flame-five-12.vercel.app/
