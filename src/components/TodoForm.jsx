@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const TodoForm = ({ tasks, setTasks }) => {
   const [error, setError] = useState(false);

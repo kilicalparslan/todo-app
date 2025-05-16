@@ -1,4 +1,3 @@
-import React from "react";
 import ProgressChart from "./ProgressChart";
 
 const TodoCount = ({ completed, total }) => {

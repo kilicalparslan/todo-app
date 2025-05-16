@@ -1,4 +1,3 @@
-import React from "react";
 import { useProgressChart } from "../hooks/useProgressChart";
 
 const ProgressChart = ({ completed, total }) => {

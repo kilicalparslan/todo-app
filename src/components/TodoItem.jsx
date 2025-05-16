@@ -1,12 +1,16 @@
-import React from "react";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import { useState, useRef, useEffect } from "react";
 
 const TodoItem = ({ item, setTasks }) => {
   const [editing, setEditing] = useState(false);
   const input = useRef(null);
 
-  const handleEdit = () => {
-    setEditing(true);
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: item.id });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
   };
 
   useEffect(() => {
@@ -18,6 +22,9 @@ const TodoItem = ({ item, setTasks }) => {
       );
     }
   }, [editing]);
+  const handleEdit = () => {
+    setEditing(true);
+  };
   const handleInputSubmit = (e) => {
     e.preventDefault();
     setEditing(false);
@@ -25,7 +32,6 @@ const TodoItem = ({ item, setTasks }) => {
   const handleInputBlur = () => {
     setEditing(false);
   };
-
   const handleInputChange = (e) => {
     setTasks((prev) =>
       prev.map((task) =>
@@ -33,7 +39,6 @@ const TodoItem = ({ item, setTasks }) => {
       )
     );
   };
-
   const toggleComplete = () => {
     setTasks((prev) =>
       prev.map((task) =>
@@ -46,11 +51,19 @@ const TodoItem = ({ item, setTasks }) => {
   const handleDelete = () => {
     setTasks((prev) => prev.filter((task) => task.id !== item.id));
   };
+
   return (
     <div
       className="flex items-center gap-4 p-4 border-b border-gray-100 last:border-0"
       id={item?.id}
+      ref={setNodeRef}
+      style={style}
+      {...attributes}
+      
     >
+      <div className="cursor-grab" {...listeners}>
+        <i className="fa-solid fa-sort fa-lg"></i>
+      </div>
       <button
         onClick={toggleComplete}
         className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 cursor-pointer hover:border-purple-400 ${
