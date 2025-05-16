@@ -1,11 +1,11 @@
-import React from "react";
+import logo from '../assets/sticky-note.png';
 
 const Header = () => {
   return (
     <header className="bg-gradient-to-r from-purple-600 to-indigo-600">
       <div className="max-w-5xl mx-auto px-4 py-4 flex items-center">
         <img
-          src="public/sticky-note.png"
+          src={logo}
           alt="Todo Logo"
           className="h-10 w-10 mr-3"
         />
